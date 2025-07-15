@@ -1,78 +1,16 @@
 const express = require('express');
-const WebSocket = require('ws');
-const { exec } = require('child_process');
 const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
-const wss = new WebSocket.Server({ port: 8080 });
-const cameraIds = ['1111', '1221', '2121', '2425', '2633', '2342', '2233', '3001', '1211'];
-const players = [];
 
-// Serve static files
-app.use('/static', express.static(path.join(__dirname, 'static')));
-app.use('/videos', express.static(path.join(__dirname, 'videos')));
+// Serve static files from the current directory
+app.use(express.static(path.join(__dirname)));
 
-// Serve cameras.html
+// Fallback to index.html for any route
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'minewatch.html'));
-});
-
-// Scan for players with Allow Snooper
-function scanForPlayers() {
-  setInterval(() => {
-    console.log('Scanning for players with Allow Snooper enabled...');
-  }, 10000);
-}
-
-wss.on('connection', ws => {
-  ws.on('message', message => {
-    try {
-      const data = JSON.parse(message);
-      if (data.event === 'waiting' && data.snooperEnabled) {
-        const cameraId = cameraIds[Math.floor(Math.random() * cameraIds.length)];
-        players.push({ ...data, cameraId });
-        ws.send(JSON.stringify({ event: 'assign', cameraId }));
-      } else if (data.event === 'join') {
-        const filename = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19) + '.mp4';
-        exec(`ffmpeg -i rtmp://minewatch-reborn.onrender.com:1935/live/cameraid${data.cameraId} -c copy -f mp4 videos/${filename} -f hls -hls_time 10 -hls_list_size 0 -hls_segment_filename /tmp/hls/cameraid${data.cameraId}_%03d.ts /tmp/hls/cameraid${data.cameraId}.m3u8`, (err) => {
-          if (err) console.error(`FFmpeg error for camera ${data.cameraId}:`, err);
-        });
-        wss.clients.forEach(client => client.send(JSON.stringify({ 
-          event: 'join', 
-          cameraId: data.cameraId, 
-          username: data.username, 
-          mode: data.mode, 
-          version: data.version, 
-          action: data.action || 'Idle' 
-        })));
-      } else if (data.event === 'leave') {
-        exec(`pkill -f "ffmpeg.*cameraid${data.cameraId}"`);
-        const index = players.findIndex(p => p.cameraId === data.cameraId);
-        if (index !== -1) players.splice(index, 1);
-        wss.clients.forEach(client => client.send(JSON.stringify({ 
-          event: 'leave', 
-          cameraId: data.cameraId 
-        })));
-      } else if (data.event === 'action') {
-        const index = players.findIndex(p => p.cameraId === data.cameraId);
-        if (index !== -1) players[index].action = data.action;
-        wss.clients.forEach(client => client.send(JSON.stringify({ 
-          event: 'action', 
-          cameraId: data.cameraId, 
-          action: data.action || 'Idle' 
-        })));
-      } else if (data.text) {
-        console.log(`Chat to ${data.cameraId}: ${data.text}`);
-      }
-    } catch (e) {
-      console.error('WebSocket error:', e);
-    }
-  });
-  ws.on('error', () => {});
-  ws.on('close', () => {});
 });
 
 app.listen(PORT, () => {
   console.log(`MineWatch site running at http://localhost:${PORT}`);
 });
-scanForPlayers();
