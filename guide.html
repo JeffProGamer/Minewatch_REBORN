@@ -1,12 +1,7 @@
 <body>
 <div class="content">
-
-
-
 <title>Minewatch</title>
 <link rel="stylesheet" href="style.css">
-
-
 <div class="navbar">
 <img src="imgs/logo.png" height="36px" width="36px" class="logo">
 <h1 class="logo-title">MineWatch</h1>
@@ -23,14 +18,12 @@
 <p>No recent announcements to display.</p>
 </div>
 <div style="height: 40px;"></div>
-
 <div class="infobox">
 <h1>Guide</h1>
 <div class="horizontal-line"></div>
 <p>If you're reading this, you're probably new here.</p>
 <p>This guide contains all essential information you need to know.</p>
 <br>
-&nbsp;
 <p>When you arrive at this site, you may see the <b>Home</b> page, which is</p>
 <p>the main section of the site when you arrive.</p>
 <br>
@@ -49,7 +42,6 @@
 <p>Remember, if you cannot/don't want to pick, just click on the</p>
 <p>Random camera hyperlink.</p>
 <br>
-&nbsp;
 <p>Congratulations! You are now watching a camera. You can see:</p>
 <br>
 <ul>
@@ -60,7 +52,7 @@
 </li>
 <p class="nobullet">started watching, the ID, and if it's running)</p>
 <li>
-<p>•<b>&nbsp;&nbsp;&nbsp;the chat </b> (only if the camera is located in a Multiplayer game)</p>
+<p>•<b>   the chat </b> (only if the camera is located in a Multiplayer game)</p>
 </li>
 </ul>
 </center>
@@ -73,13 +65,8 @@
 <p>than in a Singleplayer camera. You can know if it's a Singleplayer</p>
 <p>camera if the chat says the player is not in Multiplayer.</p>
 </div>
-
-
-
 <title>Minewatch</title>
 <link rel="stylesheet" href="style.css">
-
-
 <footer style="margin-top: 150px;">
 <div class="horizontal-line"></div>
 <center>
@@ -89,15 +76,14 @@
 </footer>
 <script>
   const backToTop = document.querySelector('#back-to-top');
-
-  backToTop.addEventListener('click', () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
+  if (backToTop) {
+    backToTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-  });
+  } else {
+    console.error('Back to top link not found');
+  }
 </script>
-
 </div>
-
 </body>

@@ -1,12 +1,7 @@
 <body>
 <div class="content">
-
-
-
 <title>Minewatch</title>
 <link rel="stylesheet" href="style.css">
-
-
 <div class="navbar">
 <img src="imgs/logo.png" height="36px" width="36px" class="logo">
 <h1 class="logo-title">MineWatch</h1>
@@ -20,14 +15,13 @@
 </div>
 </div>
 <div class="banner">
-<p>No recent announcements to display.</p>
+<p>Streaming real Minecraft Java Edition players (1.0.0–1.21.3) with Allow Snooper enabled.</p>
 </div>
 <div style="height: 40px;"></div>
-
 <div class="infobox">
 <h1>Cameras</h1>
 <div class="horizontal-line"></div>
-<p>Here you can choose a camera to watch.</p>
+<p>Watch live streams from real Minecraft Java Edition players.</p>
 <br>
 <label>Sort by:</label>
 <select class="select1">
@@ -40,57 +34,90 @@
 <br>
 <p class="normalCenter">Alternatively...</p>
 <a class="textCenterLink" href="" id="random-link">Random camera</a>
-<script src="rc.js"></script>
+<script src="https://unpkg.com/video.js@8.6.0/dist/video.min.js" onerror="window.videojsFailed=true"></script>
+<script src="https://vjs.zencdn.net/8.6.0/video.min.js" onerror="window.videojsFailed=true"></script>
+<script src="/js/video.min.js" onerror="window.videojsFailed=true"></script>
+<link href="https://unpkg.com/video.js@8.6.0/dist/video-js.min.css" rel="stylesheet">
 <p class="normalCenter"></p>
 </div>
 <br>
 <div class="oCams">
-<a href="cameraid1111.html">
-<table><tbody><tr><td><div class="camSpot"><img class="literallyNothing" src="cameras/preview/1.png">ID: 1111</div></td></tr></tbody></table>
-</a>
-<a href="cameraid1221.html">
-<table><tbody><tr><td><div class="camSpot"><img class="literallyNothing" src="cameras/preview/4.png">ID: 1221</div></td></tr></tbody></table>
-</a>
-<a href="">
-<table><tbody><tr><td><div class="camSpot"><img class="literallyNothing" src="cameras/preview/7.png">ID: 2121</div></td></tr></tbody></table>
-</a>
+<div class="camSpot">
+<video id="video-1111" class="video-js vjs-default-skin" controls preload="auto" width="320" height="240" poster="cameras/preview/1111.png">
+<source src="http://minewatch.onrender.com/stream/cameraid1111.m3u8" type="application/x-mpegURL">
+</video>
+<p>ID: 1111 | Username: <span id="username-1111">Unknown</span> | Mode: <span id="mode-1111">Unknown</span> | Version: <span id="version-1111">Unknown</span> | Action: <span id="action-1111">Unknown</span></p>
+<p><input id="chat-1111" type="text" placeholder="Chat with player..." onkeypress="if(event.key==='Enter')sendChat('1111',this.value)"></p>
+</div>
+<div class="camSpot">
+<video id="video-1221" class="video-js vjs-default-skin" controls preload="auto" width="320" height="240" poster="cameras/preview/1221.png">
+<source src="http://minewatch.onrender.com/stream/cameraid1221.m3u8" type="application/x-mpegURL">
+</video>
+<p>ID: 1221 | Username: <span id="username-1221">Unknown</span> | Mode: <span id="mode-1221">Unknown</span> | Version: <span id="version-1221">Unknown</span> | Action: <span id="action-1221">Unknown</span></p>
+<p><input id="chat-1221" type="text" placeholder="Chat with player..." onkeypress="if(event.key==='Enter')sendChat('1221',this.value)"></p>
+</div>
+<div class="camSpot">
+<video id="video-2121" class="video-js vjs-default-skin" controls preload="auto" width="320" height="240" poster="cameras/preview/2121.png">
+<source src="http://minewatch.onrender.com/stream/cameraid2121.m3u8" type="application/x-mpegURL">
+</video>
+<p>ID: 2121 | Username: <span id="username-2121">Unknown</span> | Mode: <span id="mode-2121">Unknown</span> | Version: <span id="version-2121">Unknown</span> | Action: <span id="action-2121">Unknown</span></p>
+<p><input id="chat-2121" type="text" placeholder="Chat with player..." onkeypress="if(event.key==='Enter')sendChat('2121',this.value)"></p>
+</div>
 </div>
 <div class="oCams">
-<a href="">
-<table><tbody><tr><td><div class="camSpot"><img class="literallyNothing" src="cameras/preview/2.png">ID: 2425</div></td></tr></tbody></table>
-</a>
-<a href="">
-<table><tbody><tr><td><div class="camSpot"><img class="literallyNothing" src="cameras/preview/5.png">ID: 2633</div></td></tr></tbody></table>
-</a>
-<a href="">
-<table><tbody><tr><td><div class="camSpot"><img class="literallyNothing" src="cameras/preview/8.png">ID: 2342</div></td></tr></tbody></table>
-</a>
+<div class="camSpot">
+<video id="video-2425" class="video-js vjs-default-skin" controls preload="auto" width="320" height="240" poster="cameras/preview/2425.png">
+<source src="http://minewatch.onrender.com/stream/cameraid2425.m3u8" type="application/x-mpegURL">
+</video>
+<p>ID: 2425 | Username: <span id="username-2425">Unknown</span> | Mode: <span id="mode-2425">Unknown</span> | Version: <span id="version-2425">Unknown</span> | Action: <span id="action-2425">Unknown</span></p>
+<p><input id="chat-2425" type="text" placeholder="Chat with player..." onkeypress="if(event.key==='Enter')sendChat('2425',this.value)"></p>
+</div>
+<div class="camSpot">
+<video id="video-2633" class="video-js vjs-default-skin" controls preload="auto" width="320" height="240" poster="cameras/preview/2633.png">
+<source src="http://minewatch.onrender.com/stream/cameraid2633.m3u8" type="application/x-mpegURL">
+</video>
+<p>ID: 2633 | Username: <span id="username-2633">Unknown</span> | Mode: <span id="mode-2633">Unknown</span> | Version: <span id="version-2633">Unknown</span> | Action: <span id="action-2633">Unknown</span></p>
+<p><input id="chat-2633" type="text" placeholder="Chat with player..." onkeypress="if(event.key==='Enter')sendChat('2633',this.value)"></p>
+</div>
+<div class="camSpot">
+<video id="video-2342" class="video-js vjs-default-skin" controls preload="auto" width="320" height="240" poster="cameras/preview/2342.png">
+<source src="http://minewatch.onrender.com/stream/cameraid2342.m3u8" type="application/x-mpegURL">
+</video>
+<p>ID: 2342 | Username: <span id="username-2342">Unknown</span> | Mode: <span id="mode-2342">Unknown</span> | Version: <span id="version-2342">Unknown</span> | Action: <span id="action-2342">Unknown</span></p>
+<p><input id="chat-2342" type="text" placeholder="Chat with player..." onkeypress="if(event.key==='Enter')sendChat('2342',this.value)"></p>
+</div>
 </div>
 <div class="oCams">
-<a href="">
-<table><tbody><tr><td><div class="camSpot"><img class="literallyNothing" src="cameras/preview/3.png">ID: 2233</div></td></tr></tbody></table>
-</a>
-<a href="cameraid3001.html">
-<table><tbody><tr><td><div class="camSpot"><img class="literallyNothing" src="cameras/preview/6.png">ID: 3001</div></td></tr></tbody></table>
-</a>
-<a href="cameraid1211.html">
-<table><tbody><tr><td><div class="camSpot"><img class="literallyNothing" src="cameras/preview/9.png">ID: 1211</div></td></tr></tbody></table>
-</a>
+<div class="camSpot">
+<video id="video-2233" class="video-js vjs-default-skin" controls preload="auto" width="320" height="240" poster="cameras/preview/2233.png">
+<source src="http://minewatch.onrender.com/stream/cameraid2233.m3u8" type="application/x-mpegURL">
+</video>
+<p>ID: 2233 | Username: <span id="username-2233">Unknown</span> | Mode: <span id="mode-2233">Unknown</span> | Version: <span id="version-2233">Unknown</span> | Action: <span id="action-2233">Unknown</span></p>
+<p><input id="chat-2233" type="text" placeholder="Chat with player..." onkeypress="if(event.key==='Enter')sendChat('2233',this.value)"></p>
 </div>
-
+<div class="camSpot">
+<video id="video-3001" class="video-js vjs-default-skin" controls preload="auto" width="320" height="240" poster="cameras/preview/3001.png">
+<source src="http://minewatch.onrender.com/stream/cameraid3001.m3u8" type="application/x-mpegURL">
+</video>
+<p>ID: 3001 | Username: <span id="username-3001">Unknown</span> | Mode: <span id="mode-3001">Unknown</span> | Version: <span id="version-3001">Unknown</span> | Action: <span id="action-3001">Unknown</span></p>
+<p><input id="chat-3001" type="text" placeholder="Chat with player..." onkeypress="if(event.key==='Enter')sendChat('3001',this.value)"></p>
+</div>
+<div class="camSpot">
+<video id="video-1211" class="video-js vjs-default-skin" controls preload="auto" width="320" height="240" poster="cameras/preview/1211.png">
+<source src="http://minewatch.onrender.com/stream/cameraid1211.m3u8" type="application/x-mpegURL">
+</video>
+<p>ID: 1211 | Username: <span id="username-1211">Unknown</span> | Mode: <span id="mode-1211">Unknown</span> | Version: <span id="version-1211">Unknown</span> | Action: <span id="action-1211">Unknown</span></p>
+<p><input id="chat-1211" type="text" placeholder="Chat with player..." onkeypress="if(event.key==='Enter')sendChat('1211',this.value)"></p>
+</div>
+</div>
 <br>
 <center>
-<button> &lt; </button>
+<button> < </button>
 <label> Page 1 </label>
-<button> &gt; </button>
+<button> > </button>
 </center>
-
-
-
 <title>Minewatch</title>
 <link rel="stylesheet" href="style.css">
-
-
 <footer style="margin-top: 40px;">
 <div class="horizontal-line"></div>
 <center>
@@ -99,16 +126,200 @@
 </center>
 </footer>
 <script>
-  const backToTop = document.querySelector('#back-to-top');
+const SERVER_URL = 'ws://minewatch.onrender.com:8080';
+const HLS_BASE_URL = 'http://minewatch.onrender.com';
+const cameraIds = ['1111', '1221', '2121', '2425', '2633', '2342', '2233', '3001', '1211'];
 
-  backToTop.addEventListener('click', () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
+document.querySelector('#back-to-top')?.addEventListener('click', (e) => {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+function formatTimestampForFilename() {
+  const now = new Date();
+  return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}_${String(now.getHours()).padStart(2, '0')}-${String(now.getMinutes()).padStart(2, '0')}-${String(now.getSeconds()).padStart(2, '0')}`;
+}
+
+function initializePlayer(videoElement, cameraId, retryCount = 0) {
+  const maxRetries = 3;
+  if (window.videojsFailed || typeof videojs === 'undefined') {
+    videoElement.style.display = 'none';
+    const img = document.createElement('img');
+    img.src = `cameras/preview/${cameraId}.png`;
+    img.width = 320;
+    img.height = 240;
+    img.alt = 'Video failed to load';
+    videoElement.parentNode.insertBefore(img, videoElement);
+    return;
+  }
+  try {
+    const player = videojs(videoElement, {
+      autoplay: false,
+      controls: true,
+      errorDisplay: false,
+      sources: [{ src: `${HLS_BASE_URL}/stream/cameraid${cameraId}.m3u8`, type: 'application/x-mpegURL' }]
+    }, function() {
+      this.on('error', () => {
+        this.dispose();
+        videoElement.style.display = 'none';
+        const img = document.createElement('img');
+        img.src = `cameras/preview/${cameraId}.png`;
+        img.width = 320;
+        img.height = 240;
+        img.alt = 'Stream unavailable';
+        videoElement.parentNode.insertBefore(img, videoElement);
+        if (retryCount < maxRetries) {
+          setTimeout(() => initializePlayer(videoElement, cameraId, retryCount + 1), 5000);
+        }
+      });
+    });
+  } catch (e) {}
+}
+
+function startRecording(cameraId, username, mode, version, action) {
+  try {
+    const records = JSON.parse(localStorage.getItem('cameraRecords') || '[]');
+    if (records.find(r => r.cameraId === cameraId && r.status === 'recording')) return;
+    const startTimestamp = new Date().toISOString();
+    const filename = `${formatTimestampForFilename()}.mp4`;
+    const previewImage = `cameras/preview/${cameraId}.png`;
+    records.push({ cameraId, username, mode, version, action, startTimestamp, filename, previewImage, status: 'recording' });
+    localStorage.setItem('cameraRecords', JSON.stringify(records));
+    const videoElement = document.getElementById(`video-${cameraId}`);
+    const usernameElement = document.getElementById(`username-${cameraId}`);
+    const modeElement = document.getElementById(`mode-${cameraId}`);
+    const versionElement = document.getElementById(`version-${cameraId}`);
+    const actionElement = document.getElementById(`action-${cameraId}`);
+    if (videoElement) {
+      videoElement.style.display = 'block';
+      videoElement.parentNode.querySelector('img')?.remove();
+      initializePlayer(videoElement, cameraId);
+    }
+    if (usernameElement) usernameElement.textContent = username || 'Unknown';
+    if (modeElement) modeElement.textContent = mode || 'Unknown';
+    if (versionElement) versionElement.textContent = version || 'Unknown';
+    if (actionElement) actionElement.textContent = action || 'Idle';
+  } catch (e) {}
+}
+
+function stopRecording(cameraId) {
+  try {
+    const records = JSON.parse(localStorage.getItem('cameraRecords') || '[]');
+    const record = records.find(r => r.cameraId === cameraId && r.status === 'recording');
+    if (!record) return;
+    record.stopTimestamp = new Date().toISOString();
+    record.status = 'stopped';
+    localStorage.setItem('cameraRecords', JSON.stringify(records));
+    const videoElement = document.getElementById(`video-${cameraId}`);
+    if (videoElement) {
+      const player = videojs.getPlayer(videoElement);
+      if (player) player.dispose();
+      videoElement.style.display = 'none';
+      const img = document.createElement('img');
+      img.src = `cameras/preview/${cameraId}.png`;
+      img.width = 320;
+      img.height = 240;
+      img.alt = 'No active recording';
+      videoElement.parentNode.insertBefore(img, videoElement);
+    }
+  } catch (e) {}
+}
+
+function sendChat(cameraId, message) {
+  try {
+    const input = document.getElementById(`chat-${cameraId}`);
+    if (message && input) {
+      const ws = new WebSocket(SERVER_URL);
+      ws.onopen = () => {
+        ws.send(JSON.stringify({ cameraId, text: message }));
+        ws.close();
+      };
+      input.value = '';
+    }
+  } catch (e) {}
+}
+
+function checkVideojsLoaded(callback) {
+  if (typeof videojs !== 'undefined' && !window.videojsFailed) {
+    callback();
+  } else {
+    setTimeout(() => checkVideojsLoaded(callback), 100);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const randomLink = document.getElementById('random-link');
+  const sortSelect = document.querySelector('.select1');
+  if (randomLink) {
+    randomLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      const randomId = cameraIds[Math.floor(Math.random() * cameraIds.length)];
+      window.location.href = `cameraid${randomId}.html`;
+    });
+  }
+  if (sortSelect) {
+    sortSelect.addEventListener('change', () => {});
+  }
+
+  let ws;
+  try {
+    ws = new WebSocket(SERVER_URL);
+    ws.onmessage = (event) => {
+      try {
+        const { event: evt, cameraId, username, mode, version, action } = JSON.parse(event.data);
+        if (evt === 'join' && cameraIds.includes(cameraId)) {
+          startRecording(cameraId, username, mode, version, action);
+        } else if (evt === 'leave' && cameraIds.includes(cameraId)) {
+          stopRecording(cameraId);
+        } else if (evt === 'action' && cameraIds.includes(cameraId)) {
+          const actionElement = document.getElementById(`action-${cameraId}`);
+          if (actionElement) actionElement.textContent = action || 'Idle';
+          const records = JSON.parse(localStorage.getItem('cameraRecords') || '[]');
+          const record = records.find(r => r.cameraId === cameraId && r.status === 'recording');
+          if (record) {
+            record.action = action;
+            localStorage.setItem('cameraRecords', JSON.stringify(records));
+          }
+        }
+      } catch (e) {}
+    };
+    ws.onerror = () => {};
+    ws.onclose = () => {
+      setTimeout(() => {
+        ws = new WebSocket(SERVER_URL);
+      }, 5000);
+    };
+  } catch (e) {}
+
+  checkVideojsLoaded(() => {
+    document.querySelectorAll('.video-js').forEach(video => {
+      try {
+        const cameraId = video.id.replace('video-', '');
+        const records = JSON.parse(localStorage.getItem('cameraRecords') || '[]');
+        const record = records.find(r => r.cameraId === cameraId && r.status === 'recording');
+        video.style.display = record ? 'block' : 'none';
+        if (!record) {
+          const img = document.createElement('img');
+          img.src = `cameras/preview/${cameraId}.png`;
+          img.width = 320;
+          img.height = 240;
+          img.alt = 'No active recording';
+          video.parentNode.insertBefore(img, video);
+        } else {
+          const usernameElement = document.getElementById(`username-${cameraId}`);
+          const modeElement = document.getElementById(`mode-${cameraId}`);
+          const versionElement = document.getElementById(`version-${cameraId}`);
+          const actionElement = document.getElementById(`action-${cameraId}`);
+          if (usernameElement) usernameElement.textContent = record.username || 'Unknown';
+          if (modeElement) modeElement.textContent = record.mode || 'Unknown';
+          if (versionElement) versionElement.textContent = record.version || 'Unknown';
+          if (actionElement) actionElement.textContent = record.action || 'Idle';
+          initializePlayer(video, cameraId);
+        }
+      } catch (e) {}
     });
   });
+});
 </script>
-
 </div>
-
 </body>

@@ -1,12 +1,7 @@
 <body>
 <div class="content">
-
-
-
 <title>Minewatch</title>
 <link rel="stylesheet" href="style.css">
-
-
 <div class="navbar">
 <img src="imgs/logo.png" height="36px" width="36px" class="logo">
 <h1 class="logo-title">MineWatch</h1>
@@ -23,7 +18,6 @@
 <a href="post.html">Pinned post: Important Message Please Read</a>
 </div>
 <div style="height: 40px;"></div>
-
 <div class="infobox">
 <h1>Welcome to MineWatch!</h1>
 <div class="horizontal-line"></div>
@@ -31,13 +25,10 @@
 <p> cameras from all over the Minecraft globe!
 <br>
 No registration needed!</p>
-&nbsp;
 <p>Currently we have over 3,000 cameras live at the same time!</p>
 <br>
-&nbsp;
 <a href="guide.html">Need help?</a>
 <br>
-&nbsp;
 <h1>Updates</h1>
 <div class="horizontal-line"></div>
 <center>
@@ -46,7 +37,7 @@ No registration needed!</p>
 <li>Updated images in page (Add a camera)</li>
 </ul>
 <br>
-<p>11rd May 2024</p>
+<p>11th May 2024</p>
 <ul>
 <li>Minor website fixes</li>
 <li>Updated website style</li>
@@ -65,13 +56,8 @@ No registration needed!</p>
 <br>
 <p>These statistics updates every 15 minutes.</p>
 </div>
-
-
-
 <title>Minewatch</title>
 <link rel="stylesheet" href="style.css">
-
-
 <footer style="margin-top: 40px;">
 <div class="horizontal-line"></div>
 <center>
@@ -81,15 +67,14 @@ No registration needed!</p>
 </footer>
 <script>
   const backToTop = document.querySelector('#back-to-top');
-
-  backToTop.addEventListener('click', () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
+  if (backToTop) {
+    backToTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-  });
+  } else {
+    console.error('Back to top link not found');
+  }
 </script>
-
 </div>
-
 </body>
