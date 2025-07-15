@@ -1,0 +1,97 @@
+<body>
+<div class="content">
+
+
+
+<title>Minewatch</title>
+<link rel="stylesheet" href="style.css">
+
+
+<div class="navbar">
+<img src="imgs/logo.png" height="36px" width="36px" class="logo">
+<h1 class="logo-title">MineWatch</h1>
+<div class="vertical-line"></div>
+<a href="minewatch.html" class="space-right">Home</a>
+<a href="cameras.html" class="space-right">Cameras</a>
+<a href="guide.html" class="space-right">Guide</a>
+<div class="right-links">
+<a href="guestbook.html" class="space-right">Guestbook</a>
+<a href="addcamera.html" class="space-right">Add a camera</a>
+</div>
+</div>
+<div class="banner">
+<p>No recent announcements to display.</p>
+</div>
+<div style="height: 40px;"></div>
+
+<div class="infobox">
+<label> Name: </label> <input type="text" name="Name:"><br>
+<br>
+<label> Message: </label><br>
+<textarea id="story" name="story" rows="3" cols="24"></textarea><br>
+<br>
+<button onclick="f()"> Send </button>
+<p id="p"></p>
+<script>
+function f(){
+let a = document.getElementById("p").value ="Error";
+document.getElementById("p").innerHTML =a;
+}
+</script>
+ 
+&nbsp;
+</div>
+<div class="infobox">
+<h1>Guestbook</h1>
+<div class="horizontal-line"></div>
+<p>Yo what is going on in 1221?</p>
+<br>
+<p>MineCrafter1111 - 06/06/24</p>
+<div class="horizontal-line"></div>
+<p>Hi guys</p>
+<br>
+<p>Mariodude - 06/06/24</p>
+<div class="horizontal-line"></div>
+<p>My house in 239</p>
+<br>
+<p>mclover - 06/06/24</p>
+<div class="horizontal-line"></div>
+<p>MINEWATCH IS REAL WEBSITE????? THIS IS NOT ARG????</p>
+<br>
+<p>superultramega - 06/06/24</p>
+<div class="horizontal-line"></div>
+</div>
+<br>
+<center>
+<button> &lt; </button>
+<label> Page 1 </label>
+<button> &gt; </button>
+</center>
+
+
+
+<title>Minewatch</title>
+<link rel="stylesheet" href="style.css">
+
+
+<footer style="margin-top: 40px;">
+<div class="horizontal-line"></div>
+<center>
+<p>Minewatch © 2024</p>
+<p>We are not responsible for any kind of usage. <a href="#" id="back-to-top">Back to top</a></p>
+</center>
+</footer>
+<script>
+  const backToTop = document.querySelector('#back-to-top');
+
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+</script>
+
+</div>
+
+</body>
