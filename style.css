@@ -1,87 +1,409 @@
-/* === Reset & Base Styles === */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@font-face {
+    font-family: 'MS Trebuchet';
+    src: url('fonts/trebuchetms.ttf');
 }
 body {
-  font-family: 'Segoe UI', Tahoma, sans-serif;
-  background: #eef2f5;
-  color: #222;
-  line-height: 1.6;
-  padding: 20px;
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('imgs/blocks/mossy_cobblestone.png');
+    background-size: 30px;
+    font-family: 'MS Trebuchet';
 }
-
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-  background: #fff;
-  padding: 20px;
-  border: 1px solid #ccc;
+.logo-title {
+    font-weight: bold;
 }
-
-nav a {
-  display: inline-block;
-  margin: 0 12px;
-  padding: 8px 12px;
-  color: #0066cc;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: background 0.3s;
-}
-nav a:hover {
-  background: #ddeaff;
-}
-
 h1 {
-  font-size: 2.5rem;
-  margin-bottom: 12px;
+    font-weight: 500;
 }
-
-.camera-list {
+button {
+    font-family: 'MS Trebuchet';
+}
+textarea {
+   -moz-user-select: text;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+}
+.navbar {
+  border: 2.5px solid white;
+  color: white;
+  border-radius: 4px;
+  background-image: url('imgs/blocks/oak_planks.png');
+  background-size: 24px;
+  width: 85%;
+  height: 55px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
   display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
+    padding-left: 7px;
+  padding-right: 7px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+     position: relative;
+       align-items: center;
+}
+.banner {
+  border-left: 2.5px solid white;
+  border-right: 2.5px solid white;
+  border-bottom: 2.5px solid white;
+  color: white;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('imgs/blocks/cobblestone.png');
+  background-size: 24px;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  display: flex;
+  height: 27.5px;
+  padding-left: 7px;
+  padding-right: 7px;
+  padding-bottom: 14px;
+  align-items: center;
   justify-content: center;
 }
-
-.camera-list div {
-  flex: 0 1 120px;
-  text-align: center;
+.banner > * {
+    margin-top: 13.75px;
 }
-
-.camera-list img {
-  width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-form input,
-form textarea {
-  width: 100%;
-  padding: 8px;
-  margin-top: 8px;
-  border: 1px solid #aaa;
-  border-radius: 4px;
-}
-
-form input[type="submit"] {
-  background: #0066cc;
+.content {
+    border-left: 2.5px solid white;
+  border-right: 2.5px solid white;
   color: white;
-  padding: 10px;
-  border: none;
-  margin-top: 10px;
-  cursor: pointer;
+  background-image: url('imgs/blocks/dirt.png');
+  background-size: 24px;
+  width: 65%;
+  min-height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  padding-left: 7px;
+  padding-right: 7px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  align-items: center;
+}
+.infobox {
+  margin-top: 15px;
+  border: 2.5px solid white;
+  color: white;
   border-radius: 4px;
-}
-
-form input[type="submit"]:hover {
-  background: #004e9e;
-}
-
-footer {
-  margin-top: 40px;
+  background-image: url('imgs/blocks/stone.png');
+  background-size: 24px;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  padding-left: 7px;
+  padding-right: 7px;
+  padding-bottom: 14px;
+  padding-top: 5px;
   text-align: center;
-  font-size: 0.9rem;
-  color: #555;
+  word-wrap: break-word;
+}
+.cameraid1111 {
+  margin-top: 10px;
+  border: 2.5px solid white;
+  color: white;
+  border-radius: 4px;
+  background-image: url('cameras/preview/1.png');
+  background-size: 570px;
+  width: 60%;
+  margin-left: 130px;
+  margin-right: 130px;
+  box-sizing: border-box;
+  padding-left: 0px;
+  padding-right: auto;
+  padding-bottom: auto;
+  padding-top: 0px;
+  text-align: center;
+  word-wrap: break-word;
+}
+.cameraid1221 {
+  margin-top: 10px;
+  border: 2.5px solid white;
+  color: white;
+  border-radius: 4px;
+  background-image: url('cameras/preview/4.png');
+  background-size: 570px;
+  width: 60%;
+  margin-left: 130px;
+  margin-right: 130px;
+  box-sizing: border-box;
+  padding-left: 0px;
+  padding-right: auto;
+  padding-bottom: auto;
+  padding-top: 0px;
+  text-align: center;
+  word-wrap: break-word;
+}
+.cameraid2231 {
+  margin-top: 10px;
+  border: 2.5px solid white;
+  color: white;
+  border-radius: 4px;
+  background-image: url('cameras/preview/11.png');
+  background-size: 570px;
+  width: 60%;
+  margin-left: 130px;
+  margin-right: 130px;
+  box-sizing: border-box;
+  padding-left: 0px;
+  padding-right: auto;
+  padding-bottom: auto;
+  padding-top: 0px;
+  text-align: center;
+  word-wrap: break-word;
+}
+.cameraidnull {
+  margin-top: 10px;
+  border: 2.5px solid white;
+  color: white;
+  border-radius: 4px;
+  background-image: url('cameras/preview/null.png');
+  background-size: 570px;
+  width: 60%;
+  margin-left: 130px;
+  margin-right: 130px;
+  box-sizing: border-box;
+  padding-left: 0px;
+  padding-right: auto;
+  padding-bottom: auto;
+  padding-top: 0px;
+  text-align: center;
+  word-wrap: break-word;
+}
+.cameraid2036 {
+  margin-top: 10px;
+  border: 2.5px solid white;
+  color: white;
+  border-radius: 4px;
+  background-image: url('cameras/preview/10.png');
+  background-size: 570px;
+  width: 60%;
+  margin-left: 130px;
+  margin-right: 130px;
+  box-sizing: border-box;
+  padding-left: 0px;
+  padding-right: auto;
+  padding-bottom: auto;
+  padding-top: 0px;
+  text-align: center;
+  word-wrap: break-word;
+}
+.cameraid2121 {
+  margin-top: 10px;
+  border: 2.5px solid white;
+  color: white;
+  border-radius: 4px;
+  background-image: url('cameras/preview/7.png');
+  background-size: 570px;
+  width: 60%;
+  margin-left: 130px;
+  margin-right: 130px;
+  box-sizing: border-box;
+  padding-left: 0px;
+  padding-right: auto;
+  padding-bottom: auto;
+  padding-top: 0px;
+  text-align: center;
+  word-wrap: break-word;
+}
+.cameraid2425 {
+  margin-top: 10px;
+  border: 2.5px solid white;
+  color: white;
+  border-radius: 4px;
+  background-image: url('cameras/preview/2.png');
+  background-size: 570px;
+  width: 60%;
+  margin-left: 130px;
+  margin-right: 130px;
+  box-sizing: border-box;
+  padding-left: 0px;
+  padding-right: auto;
+  padding-bottom: auto;
+  padding-top: 0px;
+  text-align: center;
+  word-wrap: break-word;
+}
+.cameraid2633 {
+  margin-top: 10px;
+  border: 2.5px solid white;
+  color: white;
+  border-radius: 4px;
+  background-image: url('cameras/preview/5.png');
+  background-size: 570px;
+  width: 60%;
+  margin-left: 130px;
+  margin-right: 130px;
+  box-sizing: border-box;
+  padding-left: 0px;
+  padding-right: auto;
+  padding-bottom: auto;
+  padding-top: 0px;
+  text-align: center;
+  word-wrap: break-word;
+}
+.cameraid2342 {
+  margin-top: 10px;
+  border: 2.5px solid white;
+  color: white;
+  border-radius: 4px;
+  background-image: url('cameras/preview/8.png');
+  background-size: 570px;
+  width: 60%;
+  margin-left: 130px;
+  margin-right: 130px;
+  box-sizing: border-box;
+  padding-left: 0px;
+  padding-right: auto;
+  padding-bottom: auto;
+  padding-top: 0px;
+  text-align: center;
+  word-wrap: break-word;
+}
+.cameraid2233 {
+  margin-top: 10px;
+  border: 2.5px solid white;
+  color: white;
+  border-radius: 4px;
+  background-image: url('cameras/preview/3.png');
+  background-size: 570px;
+  width: 60%;
+  margin-left: 130px;
+  margin-right: 130px;
+  box-sizing: border-box;
+  padding-left: 0px;
+  padding-right: auto;
+  padding-bottom: auto;
+  padding-top: 0px;
+  text-align: center;
+  word-wrap: break-word;
+}
+.cameraid3001 {
+  margin-top: 10px;
+  border: 2.5px solid white;
+  color: white;
+  border-radius: 4px;
+  background-image: url('cameras/preview/6.png');
+  background-size: 570px;
+  width: 60%;
+  margin-left: 130px;
+  margin-right: 130px;
+  box-sizing: border-box;
+  padding-left: 0px;
+  padding-right: auto;
+  padding-bottom: auto;
+  padding-top: 0px;
+  text-align: center;
+  word-wrap: break-word;
+}
+.cameraid1211 {
+  margin-top: 10px;
+  border: 2.5px solid white;
+  color: white;
+  border-radius: 4px;
+  background-image: url('cameras/preview/9.png');
+  background-size: 570px;
+  width: 60%;
+  margin-left: 130px;
+  margin-right: 130px;
+  box-sizing: border-box;
+  padding-left: 0px;
+  padding-right: auto;
+  padding-bottom: auto;
+  padding-top: 0px;
+  text-align: center;
+  word-wrap: break-word;
+}
+li {
+     display: flex;
+  justify-content: center;
+}
+li::before {
+    content: "â€¢آ آ آ ";
+}
+.nobullet::before {
+    content: unset;
+}
+ul {
+      list-style-position: outside;
+  list-style-type: none;
+  padding: 1px;
+  text-align: left;
+  margin-bottom: 16px;
+}
+.vertical-line {
+    width: 1px;
+    height: 100%;
+    background: white;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+.horizontal-line {
+    height: 1px;
+    width: 100%;
+    background: white;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+.logo {
+    margin-right: 12px;
+}
+.banner > * {
+    display: inline-block;
+}
+.navbar > * {
+    display: inline-block;
+}
+a {
+    font-style: italic;
+    text-decoration: underline;
+    color: inherit;
+}
+* {
+      margin-top: 0;
+  margin-bottom: 0;
+}
+.space-right {
+    margin-right: 12px;
+}
+.right-links {
+  margin-left: auto;
+}
+.current-page {
+  color: yellow !important;
+}
+.oCams {
+    width: 100%;
+    overflow:hidden;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    justify-content: center;
+}
+
+.camSpot {
+    margin-top: 15px;
+    border: 1.5px solid white;
+    color: black;
+    border-radius: 1px;
+    background-color: black;
+    width: 188px;
+    float: left;
+    height: 30%;
+    font-family: 'MS Trebuchet';
+    color: white;
+    text-align:center;
+    padding-right: 0px;
+    margin-right: 5%;
+}
+
+.literallyNothing {
+    background-color: black;
+    width:100%;
+    height: 150px;
+    font-family: 'MS Trebuchet';
+    color: black;
+    text-align:center;
 }
