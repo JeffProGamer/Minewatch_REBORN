@@ -12,8 +12,8 @@ const players = [];
 app.use('/static', express.static(path.join(__dirname, 'static')));
 app.use('/videos', express.static(path.join(__dirname, 'videos')));
 
-// Serve minewatch.html
-app.get('/', (req, res) => {
+// Serve cameras.html
+app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'minewatch.html'));
 });
 
