@@ -1,0 +1,60 @@
+import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.plugin.java.JavaPlugin;
+import java.net.URI;
+import javax.websocket.*;
+
+public class MineWatchPlugin extends JavaPlugin implements Listener {
+  private WebSocketClient wsClient;
+  private String[] cameraIds = {"1111", "1221", "2121", "2425", "2633", "2342", "2233", "3001", "1211"};
+  private java.util.Map<String, String> playerCameraMap = new java.util.HashMap<>();
+
+  @Override
+  public void onEnable() {
+    getServer().getPluginManager().registerEvents(this, this);
+    connectWebSocket();
+    // Start RTMP stream (requires external tool like OBS)
+  }
+
+  private void connectWebSocket() {
+    try {
+      WebSocketContainer container = ContainerProvider.getWebSocketContainer();
+      wsClient = new WebSocketClient();
+      container.connectToServer(wsClient, new URI("ws://minewatch-reborn.onrender.com:8080"));
+    } catch (Exception e) {
+      getLogger().warning("WebSocket connection failed: " + e.getMessage());
+    }
+  }
+
+  @org.bukkit.event.EventHandler
+  public void onPlayerJoin(PlayerJoinEvent event) {
+    if (event.getPlayer().getClientOption("snooperEnabled")) {
+      String cameraId = cameraIds[(int) (Math.random() * cameraIds.length)];
+      playerCameraMap.put(event.getPlayer().getName(), cameraId);
+      wsClient.sendMessage("{\"event\":\"join\",\"cameraId\":\"" + cameraId + "\",\"username\":\"" + event.getPlayer().getName() + "\",\"mode\":\"Multiplayer\",\"version\":\"1.12.2\",\"action\":\"Idle\"}");
+    }
+  }
+
+  @org.bukkit.event.EventHandler
+  public void onPlayerQuit(PlayerQuitEvent event) {
+    String cameraId = playerCameraMap.remove(event.getPlayer().getName());
+    if (cameraId != null) {
+      wsClient.sendMessage("{\"event\":\"leave\",\"cameraId\":\"" + cameraId + "\"}");
+    }
+  }
+
+  @ClientEndpoint
+  public class WebSocketClient {
+    private Session session;
+    @OnOpen
+    public void onOpen(Session session) { this.session = session; }
+    @OnMessage
+    public void onMessage(String message) {}
+    public void sendMessage(String message) {
+      try {
+        session.getBasicRemote().sendText(message);
+      } catch (Exception e) {}
+    }
+  }
+}
