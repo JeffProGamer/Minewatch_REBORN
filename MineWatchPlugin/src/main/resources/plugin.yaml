@@ -1,0 +1,4 @@
+name: MineWatchPlugin
+version: 1.0.0
+main: MineWatchPlugin
+api-version: 1.12
